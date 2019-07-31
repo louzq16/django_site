@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+   <meta charset="utf-8">
+   <title></title>
+    
+      <script type="text/javascript" src="/static/js/two.min.js">
+         function WebSocketTest()
+         {
+            if ("WebSocket" in window)
+            {
+                alert("您的浏览器支持 WebSocket!");
+               
+                socket = new WebSocket("ws://" + "localhost:8000" + "/channels_example/");
+                socket.onmessage = function(e) {
+                    alert(e.data);
+                }
+                socket.onopen = function() {
+                    socket.send("hello world");
+                }
+                // Call onopen directly if socket is already open
+                if (socket.readyState == WebSocket.OPEN) socket.onopen();
+            }
+            
+            else
+            {
+               // 浏览器不支持 WebSocket
+               alert("您的浏览器不支持 WebSocket!");
+            }
+         }
+      </script>
+        
+   </head>
+   <body>
+   
+      <div id="sse">
+         <a href="javascript:WebSocketTest()">运行 WebSocket</a>
+      </div>
+      
+   </body>
+</html>

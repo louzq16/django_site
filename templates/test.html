@@ -1,0 +1,30 @@
+<body>
+    <!--创建一个div作为一个选区 也就是svg 我就是介么理解地-->
+    <div id="draw-shapes">
+                        
+    </div>
+        
+        
+        
+    <script type="text/javascript" src=>
+         
+    var elem = document.getElementById('draw-shapes');/*原生的JS代码 取到你所创建的Div*/
+    var params = { width: 400, height: 400}; //设置二维空间的宽高
+    var two = new Two(params).appendTo(elem); //新建一个在div中的二维空间
+        
+        
+    var circle = two.makeCircle(100, 200, 45); // 创建圆形（x坐标，y坐标，半径）
+    var star = two.makeStar(245, 200, 65,30,5);//创建五角星（x坐标，y坐标，内半径，外半径，几角星） 
+
+    // 设置不同的样式属性:
+    circle.fill = '#CCD0D5';  // 填充色
+    circle.stroke = '#D3C294'; // 边线颜色
+    circle.linewidth = 5;// 边线的宽度
+    
+    star.fill = '#FFD31C';//填充色
+    star.opacity = 0.5;//透明度
+    star.noStroke();//去掉边线
+    two.update();// 将生成的空间，图形投射到网页上，
+    
+    </script>
+    </body>
