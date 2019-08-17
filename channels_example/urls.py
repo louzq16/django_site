@@ -20,5 +20,8 @@ urlpatterns = [
     url(r'^$', view.hello),
     url(r'^admin/', admin.site.urls),
     # video
-    url(r'^camera/test/',view.video_feed)
+    url(r'^camera/test1/',view.video_feed_1)
+    url(r'^camera/test2/',view.video_feed_2)
+    url(r'^camera/test3/',view.video_feed_3)
+    url(r'^camera/test4/',view.video_feed_4)
 ]

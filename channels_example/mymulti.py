@@ -36,6 +36,7 @@ class mygetimg:
     def prostart(self):
         self.p.start()
     def __init__(self):
+        self.camera_id=0
         self.q=Queue(10)
         self.p=Process(target=self.listener,args=(self.q,))
     def __del__(self):
